@@ -77,3 +77,63 @@ function add4() {
 add4();
 
 //5
+// 평균
+// 최솟값 / 최댓값 *100
+const add5 =()=>{
+    const arr = [1, 100 , 100 , 100];//배열의 점수를 담고
+    let total= 0;//최솟값 / 최댓값 *100 을 담을 변수 선언
+    let z = arr[0]; // 최댓값 을 얻어오기위해 선언
+
+    for(let j = 0; j<=arr.length-1;j++){
+        if(z < arr[j] ){
+            z = arr[j];// 최댓값 구했음
+        }
+    }
+    console.log(z);
+    for(let k of arr){
+        total += k / z * 100;// 배열에 for of 를 사용 total 담음
+    }
+    // console.log(total);
+    let avg = total/arr.length;//토탈 과 과목 개수를 나눔
+    console.log(avg);
+}
+add5();
+
+// 6
+// ox 퀴즈
+const add6 =()=>{
+    const arr = 'oooooooooo';
+    let total = 0;
+    let count = 0;
+    for(let i of arr){
+        if(i==='o'){
+            total++;// 한개씩 올리고 
+            count += total;//카운터에 추가
+        }else{
+            total=0;//0으로 다시 초기화
+        }
+    }
+    console.log(count);
+}
+add6();
+
+// 7
+const add7 =()=>{
+    const arr = [100,95,90,80,70,60,50];//과목의 점수
+    let total = 0;//총합 점수
+    let count = 0;//평균을 넘은 학생수
+
+    for(let i of arr){
+        total += i;// 하나씩 더해줌
+    }
+    let avg = total/arr.length;//평균을 구합니다
+    for(let j =0;j<=arr.length-1;j++){
+        if(avg<arr[j]){
+            count++;//넘은 학생수를 하나씩 올려줍니다
+        }
+    }
+    let result = ((count/arr.length)*100).toFixed(3);
+    // 평균을 넘은 학생수 /총학생수 *100   toFixed 함수를 이용해 소수점을 만듬
+    console.log(result);
+}
+add7();
